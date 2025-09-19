@@ -2,7 +2,7 @@ import * as dotenv from 'dotenv';
 dotenv.config();
 import express from 'express';
 import conectDB from './config/db.js';
-import morgan from "morgan";
+import morgan from "morgan"; //show http status codes in the console
 
 conectDB();
 
