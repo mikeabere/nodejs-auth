@@ -1,6 +1,7 @@
 import nodemailer from "nodemailer";
 import crypto from "crypto";
 import User from "../models/UserModel.js";
+import HTTP_STATUS_CODES from "http-status-codes";
 
  // Email setup
     const transporter = nodemailer.createTransport({
@@ -36,7 +37,7 @@ try{
 
     await transporter.sendMail(mailOptions);
     res
-      .status(201)
+      .status(HTTP_STATUS_CODES.CREATED)
       .json({success: true, message: "User registered. Please verify OTP sent to email." });
     }catch(error){
      res
