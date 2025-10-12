@@ -1,7 +1,7 @@
 import * as dotenv from 'dotenv';
 dotenv.config();
 import express from 'express';
-import conectDB from './config/db.js';
+import conectDB from './config/db.js'; //db
 import morgan from "morgan"; //show http status codes in the console
 import http from "tttp"; //temporary
 
