@@ -7,9 +7,9 @@ import nodemailer from "nodemailer";
 
 
 export const register = async (req, res) => {
-const { email, password } = req.body;
+const { email, password, role } = req.body; //should remove role
 const passwordHash = await bcrypt.hash(password, 12);
-await User.create({ email, passwordHash });
+await User.create({ email, passwordHash, role }); //should remove role
 res.status(201).json({ message: "User registered" });
 };
 
