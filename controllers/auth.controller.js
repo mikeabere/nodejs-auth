@@ -81,6 +81,7 @@ res.sendStatus(204);
 
 
 export const forgotPassword = async (req, res) => {
+try{
 const user = await User.findOne({ email: req.body.email });
 if (!user) return res.sendStatus(200);
 
@@ -91,15 +92,35 @@ user.passwordResetExpires = Date.now() + 3600000;
 await user.save();
 
 
-const transporter = nodemailer.createTransport({ sendmail: true });
-await transporter.sendMail({
-to: user.email,
-subject: "Password Reset",
-text: `Reset token: ${resetToken}`
-});
+   const resetUrl = `${process.env.CLIENT_URL}/reset-password/${resetToken}`;
+
+    // Email setup
+    const transporter = nodemailer.createTransport({
+      service: "Gmail",
+      auth: {
+        user: process.env.EMAIL_USER,
+        pass: process.env.EMAIL_PASS, //should check the password
+      },
+    });
+
+    const mailOptions = {
+      to: user.email,
+      from: "no-reply@yourapp.com",
+      subject: "Password Reset",
+      html: `<p>Hello ${user.name},</p>
+        <p>You requested to reset your password. Click the link below to reset:</p>
+        <a href="${resetUrl}">${resetUrl}</a>
+        <p>This link will expire in 15 minutes.</p>`,
+    };
+
+    await transporter.sendMail(mailOptions);
 
 
-res.sendStatus(200);
+    res.status(200).json({ message: "Reset link sent to email" });
+  } catch(error) {
+    console.error(error);
+    res.status(500).json({ message: "Server error while sending reset link" });
+  }
 };
 
 

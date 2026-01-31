@@ -18,7 +18,7 @@ app.use(cors());
 app.use("/api/v1/auth", authRoutes);
 //app.use("/auth/login", authRoutes);
 
-if(process.env.NODE_ENV = "development"){
+if(process.env.NODE_ENV === "development"){
    app.use(morgan("dev"));
 }
 
