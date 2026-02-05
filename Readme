@@ -1,2 +1,23 @@
-## read me goes hear
-the project uses ES6 javascript and MERN stack
+# API Documentation
+
+This document will contain the comprehensive API documentation for the authentication and authorization system. It will detail all endpoints, request/response formats, authentication requirements, and error codes.
+
+## Authentication Endpoints
+
+*   `POST /api/auth/register`: User registration
+*   `POST /api/auth/login`: User login
+*   `GET /api/auth/refresh`: Refresh access token
+*   `POST /api/auth/logout`: User logout
+
+## User Management Endpoints (Admin Only)
+
+*   `GET /api/users`: Get all users
+*   `PUT /api/users/:id/role`: Update user role
+
+## Request/Response Examples
+
+(To be filled with detailed examples for each endpoint)
+
+## Error Codes
+
+(To be filled with common error codes and their meanings)
