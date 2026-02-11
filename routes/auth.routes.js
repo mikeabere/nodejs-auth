@@ -5,7 +5,7 @@ import * as auth from "../controllers/auth.controller.js";
 
 const router = express.Router();
 
-
+//limit rate and prevent attack
 const limiter = rateLimit({ windowMs: 60 * 1000, max: 5 });
 
 //router.get("/users/me", auth.register);
