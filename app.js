@@ -14,12 +14,13 @@ app.use(cookieParser());
 app.use(helmet());
 app.use(cors());
 
+//use before routes
+if(process.env.NODE_ENV === "development"){
+   app.use(morgan("dev"));
+}
 
 app.use("/api/v1/auth", authRoutes);
 //app.use("/auth/login", authRoutes);
 
-if(process.env.NODE_ENV === "development"){
-   app.use(morgan("dev"));
-}
 
 export default app;
