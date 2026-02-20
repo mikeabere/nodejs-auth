@@ -20,7 +20,7 @@ if(process.env.NODE_ENV === "development"){
 }
 
 app.use("/api/v1/auth", authRoutes);
-//app.use("/auth/login", authRoutes);
+
 
 
 export default app;
