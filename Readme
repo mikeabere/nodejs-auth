@@ -21,3 +21,5 @@ This document will contain the comprehensive API documentation for the authentic
 ## Error Codes
 
 (To be filled with common error codes and their meanings)
+
+* 404HTTP - not found
