@@ -25,3 +25,4 @@ This document will contain the comprehensive API documentation for the authentic
 * 404-HTTP - not found
 * 201-HTTP - created
 * 200-HTTP - OK
+* 500-HTTP - SERVER errors
