@@ -26,3 +26,4 @@ This document will contain the comprehensive API documentation for the authentic
 * 201-HTTP - created
 * 200-HTTP - OK
 * 500-HTTP - SERVER errors
+* 400-HTTP - CLIENT errors
