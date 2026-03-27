@@ -20,7 +20,7 @@ This document will contain the comprehensive API documentation for the authentic
 
 ## Error Codes
 
-(To be filled with common error codes and their meanings)
+
 
 * 404-HTTP - not found
 * 201-HTTP - created
